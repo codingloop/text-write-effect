@@ -1,22 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import useTextWriteEffect from "./hooks/textwrite";
 
 function App() {
+  const currentText = useTextWriteEffect(
+    [
+      "This is first line",
+      "This is second line",
+      "This is third line",
+      "This is forth line",
+      "This is fifth line",
+      "This is sixth line",
+    ],
+    150
+  );
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>{currentText}</p>
       </header>
     </div>
   );
